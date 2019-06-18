@@ -19,6 +19,6 @@ c.单一性机制
 a.HashMap  
 数据结构中有数组和链表来实现对数据，采用哈希表数据结构存取。左边是数组，记长度为length，当一个对象存进来的时候，先计算其哈希值记为hash，则该对象存的数组下标就是hash%length（取模运算）。  
 HashMap中每个节点Node实现了Entry接口，节点中包含属性hash,key,value和next，其中next即该节点中下一个对象，key和value分别为该节点的键和值。  
-![My helpful screenshot](/assets/NodeConstruct.png)  
+![Node构造函数](../assets/NodeConstruct.png)  
 存数据时若出现数组下标相同的情况，则会把该节点原来的对象放在后一个位置，新的对象放在原来对象的前面并把next置为原来的对象。  
-![My helpful screenshot](/assets/HashPutValue.png)  
+![put方法调用的主要方法](../assets/HashPutValue.png)  
