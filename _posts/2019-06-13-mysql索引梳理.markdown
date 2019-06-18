@@ -1,0 +1,24 @@
+---
+layout: 乔巴博客
+title:  "Java开发"
+date:   2019-06-14 17:03:36 +0530
+categories: mysql 索引 优化
+---
+**JAVA基础**
+1.类加载器  
+java类加载器从高到低分为系统BootStrap（引导）加载器、Extension（扩展）类加载器、Application（亦称System，系统）类加载器和自定义类加载器（高一级的类加载器是低一级的父类加载器），前三者加载文件的地址分别在JRE/lib/rt.jar、JRE/lib/ext（或者java.ext.dirs指向的目录）、CLASSPATH环境变量（由-classpath或-cp选项定义，或者是JAR中的Manifest的classpath属性定义）。  
+类加载器基于三个机制：双亲委托、可见性和单一性。  
+a.双亲委托机制  
+当一个类在需要加载初始化的时候，仅在有需要加载的时候被加载，当加载一个类时，请求会被委派到最高一级的父类加载器（BootStrap父类加载器），若父类加载器的加载文件路径下找到了该类，则该类会被加载，下一级类加载器就不会加载这个类；若没有找到该类，则请求会回到下一级类加载器，以此类推。所以自定义的类都在自定义类加载器（classpath）中加载。  
+b.可见性机制  
+子类加载器可以看到父类加载器加载的类，反之不行。  
+如要用父类加载器加载已经被子类加载器加载过的类，会报NPE异常。利用java反射机制用父类加载器加载类的书写：Class.forName("com.test.Test", true,  Test.class.getClassLoader().getParent());  
+c.单一性机制  
+父类加载器加载过的类不能被子类加载器再次加载。  
+2.集合的结构  
+a.HashMap  
+数据结构中有数组和链表来实现对数据，采用哈希表数据结构存取。左边是数组，记长度为length，当一个对象存进来的时候，先计算其哈希值记为hash，则该对象存的数组下标就是hash%length（取模运算）。  
+HashMap中每个节点Node实现了Entry接口，节点中包含属性hash,key,value和next，其中next即该节点中下一个对象，key和value分别为该节点的键和值。  
+![My helpful screenshot](/assets/NodeConstruct.png)  
+存数据时若出现数组下标相同的情况，则会把该节点原来的对象放在后一个位置，新的对象放在原来对象的前面并把next置为原来的对象。  
+![My helpful screenshot](/assets/HashPutValue.png)  
