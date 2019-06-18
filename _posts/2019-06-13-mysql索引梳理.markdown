@@ -2,7 +2,7 @@
 layout: 乔巴博客
 title:  "Java开发"
 date:   2019-06-14 17:03:36 +0530
-categories: mysql 索引 优化
+categories: java
 ---
 **JAVA基础**
 1.类加载器  
