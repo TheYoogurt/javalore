@@ -30,7 +30,7 @@ HashMap中每个节点Node实现了Entry接口，节点中包含属性hash,key,v
 b.ArrayList  
 ArrayList数据结构就是以Object为元素的数组  
 ArrayList有5个属性，如下：  
-[ArrayList的属性](assets/ArrayListProperties.png "ArrayList的属性")  
+![ArrayList的属性](assets/ArrayListProperties.png "ArrayList的属性")  
 ArrayLIst有3个构造方法，如下：  
-[ArrayList的构造方法](assets/ArrayListContruct.png "ArrayList的构造方法")  
+![ArrayList的构造方法](assets/ArrayListContruct.png "ArrayList的构造方法")  
 
