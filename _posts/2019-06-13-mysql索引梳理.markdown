@@ -23,9 +23,14 @@ HashMap中每个节点Node实现了Entry接口，节点中包含属性hash,key,v
 存数据时若出现数组下标相同的情况，则会把该节点原来的对象放在后一个位置，新的对象放在原来对象的前面并把next置为原来的对象。这是也是解决hash冲突的方法之一——链地址法的一种实现  
 [解决hash冲突的方法](https://www.cnblogs.com/zhangbing12304/p/7997980.html)  
 1.开放定址法  
+如果冲突，则按照一定规律找别的节点，直到为找到的节点中对象为空为止  
 2.再哈希法  
 3.链地址法  
 ![put方法调用的主要方法](assets/HashPutValue.png "put方法调用的主要方法")   
 b.ArrayList  
-ArrayList数据结构就是以Object为元素的数组
+ArrayList数据结构就是以Object为元素的数组  
+ArrayList有5个属性，如下：  
+[ArrayList的属性](assets/ArrayListProperties.png "ArrayList的属性")  
+ArrayLIst有3个构造方法，如下：  
+[ArrayList的构造方法](assets/ArrayListContruct.png "ArrayList的构造方法")  
 
